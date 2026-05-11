@@ -39,7 +39,10 @@ const createLead = async (req, res, next) => {
       await sendLeadAutoReply({
         to: lead.email,
         name: lead.name,
+        phone: lead.phone,
+        company: lead.company,
         service: lead.service,
+        message: lead.message,
       });
 
       lead.emailSentAt = new Date();
